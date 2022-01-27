@@ -1,0 +1,79 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Simple User API
+  description: A simple User API to illustrate OpenAPI concepts
+
+servers:
+  - url: /local/
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+security:
+  - BasicAuth: []
+
+paths:
+  /api/users:
+    get:
+      description: Returns a list of user
+      parameters:
+        id: number
+        phoneNumber: string
+
+      responses:
+        '200':
+          description: Successfully returned a list of user
+          content:
+            application/json:
+              schema:
+                status: number
+                msg: string
+                user: array
+
+    post:
+      description: Returns inserted user id
+      parameters:
+        phoneNumber: string
+
+      responses:
+        '200':
+          description: Successfully returned a list of user
+          content:
+            application/json:
+              schema:
+                status: number
+                msg: string
+                userId: number
+
+    patch:
+      description: Returns result of update user
+      parameters:
+        id: number
+        phoneNumber: string
+
+      responses:
+        '200':
+          description: Successfully returned a list of user
+          content:
+            application/json:
+              schema:
+                status: number
+                msg: string
+
+    delete:
+      description: Returns result of delete user
+      parameters:
+        id: number
+        phoneNumber: string
+
+      responses:
+        '200':
+          description: Successfully returned a list of user
+          content:
+            application/json:
+              schema:
+                status: number
+                msg: string
