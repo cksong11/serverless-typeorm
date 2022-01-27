@@ -32,3 +32,6 @@ Serverless: ANY /api/users
 
 Serverless: Offline listening on http://localhost:3000
 ```
+
+## OpenAPI
+api.yaml
